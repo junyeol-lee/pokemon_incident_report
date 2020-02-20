@@ -2,5 +2,5 @@
 
 class Request < ApplicationRecord
   has_many :pokemons
-  validates :date, :serviceArea, :serviceRequest, :location, presence: true
+  validates :date, :serviceArea, :serviceRequest, :location, :neighbourhood, presence: true
 end

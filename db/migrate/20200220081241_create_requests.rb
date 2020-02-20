@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class CreateRequests < ActiveRecord::Migration[6.0]
   def change
     create_table :requests do |t|
       t.datetime :date
       t.string :serviceArea
       t.string :serviceRequest
-      t.string :neighborhood
-      t.string :location
+      t.string :neighbourhood
+      t.array :location
 
       t.timestamps
     end
