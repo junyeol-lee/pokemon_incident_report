@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_081241) do
+ActiveRecord::Schema.define(version: 2020_02_20_082757) do
+
+  create_table "pokemons", force: :cascade do |t|
+    t.string "name"
+    t.string "move"
+    t.integer "request_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["request_id"], name: "index_pokemons_on_request_id"
+  end
 
   create_table "requests", force: :cascade do |t|
     t.datetime "date"
@@ -22,4 +31,5 @@ ActiveRecord::Schema.define(version: 2020_02_20_081241) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pokemons", "requests"
 end
