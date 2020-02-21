@@ -3,9 +3,11 @@
 one:
   name: MyString
   move: MyString
+  pokemonnest: one
   request: one
 
 two:
   name: MyString
   move: MyString
+  pokemonnest: two
   request: two

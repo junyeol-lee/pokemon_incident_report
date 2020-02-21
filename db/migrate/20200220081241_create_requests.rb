@@ -7,7 +7,7 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.string :serviceArea
       t.string :serviceRequest
       t.string :neighbourhood
-      t.array :location
+      t.string :location
 
       t.timestamps
     end

@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_191948) do
+ActiveRecord::Schema.define(version: 2020_02_21_025856) do
+
+  create_table "pokemonnests", force: :cascade do |t|
+    t.string "historicalName"
+    t.string "streetName"
+    t.string "streetNumber"
+    t.string "grade"
+    t.string "locationAddress"
+    t.string "constructionDate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.string "move"
-    t.integer "request_id", null: false
+    t.integer "pokemonnest_id", null: false
+    t.integer "request_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["pokemonnest_id"], name: "index_pokemons_on_pokemonnest_id"
     t.index ["request_id"], name: "index_pokemons_on_request_id"
   end
 
@@ -31,5 +44,6 @@ ActiveRecord::Schema.define(version: 2020_02_20_191948) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pokemons", "pokemonnests"
   add_foreign_key "pokemons", "requests"
 end

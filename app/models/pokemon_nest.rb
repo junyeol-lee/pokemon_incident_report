@@ -1,2 +1,0 @@
-class PokemonNest < ApplicationRecord
-end

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Pokemon < ApplicationRecord
-  belongs_to :request # One to many association
+  belongs_to :pokemonnest
+  belongs_to :request, optional: true
 
-  validates :name, presence: true
-  # The FK is also required.
+  has_many :requests
 end
