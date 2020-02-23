@@ -2,7 +2,7 @@
 
 class Pokemon < ApplicationRecord
   belongs_to :pokemonnest
-  belongs_to :request, optional: true
 
-  has_many :requests
+  has_many :pokemonwaveds
+  has_many :requests, through: :pokemonwaves
 end

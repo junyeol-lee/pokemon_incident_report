@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # Run this script using: rails db:seed
+Pokemonwave.destroy_all
 Pokemon.destroy_all
 Pokemonnest.destroy_all
 Request.destroy_all
@@ -38,10 +39,15 @@ requestBody.each do |_item|
 
   number_of_pokemons = rand(1..10)
   number_of_pokemons.times do
-    nest = Pokemonnest.order('RANDOM()').first
-    request.pokemons.create(name: nest.pokemon.name,
-                            move: nest.pokemon.move)
+    randomPokemon = Pokemonnest.order('RANDOM()').first
+    Pokemonwave.create(request: request,
+                       pokemon: randomPokemon.pokemon)
   end
+  # number_of_pokemons.times do
+  #   request.pokemonwave = Pokemonnest.order('RANDOM()').first
+  #                     .pokemons.create(name: nest.pokemon.name,
+  #                                      move: nest.pokemon.move)
+  # end
 end
 
 puts "Created #{Pokemonnest.count} pokemonnests."

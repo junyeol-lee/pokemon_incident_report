@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_025856) do
+ActiveRecord::Schema.define(version: 2020_02_21_053343) do
 
   create_table "pokemonnests", force: :cascade do |t|
     t.string "historicalName"
@@ -27,11 +27,18 @@ ActiveRecord::Schema.define(version: 2020_02_21_025856) do
     t.string "name"
     t.string "move"
     t.integer "pokemonnest_id", null: false
-    t.integer "request_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["pokemonnest_id"], name: "index_pokemons_on_pokemonnest_id"
-    t.index ["request_id"], name: "index_pokemons_on_request_id"
+  end
+
+  create_table "pokemonwaves", force: :cascade do |t|
+    t.integer "request_id", null: false
+    t.integer "pokemon_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pokemon_id"], name: "index_pokemonwaves_on_pokemon_id"
+    t.index ["request_id"], name: "index_pokemonwaves_on_request_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -45,5 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_025856) do
   end
 
   add_foreign_key "pokemons", "pokemonnests"
-  add_foreign_key "pokemons", "requests"
+  add_foreign_key "pokemonwaves", "pokemons"
+  add_foreign_key "pokemonwaves", "requests"
 end
