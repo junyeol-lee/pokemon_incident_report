@@ -34,7 +34,8 @@ requestBody.each do |_item|
   request = Request.create(date: _item.sr_date,
                            serviceArea: _item.service_area,
                            serviceRequest: _item.service_request,
-                           location: _item.location_1.latitude + ' ' + _item.location_1.longitude,
+                           latitude: _item.location_1.latitude,
+                           longitude: _item.location_1.longitude,
                            neighbourhood: _item.neighbourhood)
 
   number_of_pokemons = rand(1..10)
