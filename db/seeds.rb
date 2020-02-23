@@ -34,7 +34,7 @@ requestBody.each do |_item|
   request = Request.create(date: _item.sr_date,
                            serviceArea: _item.service_area,
                            serviceRequest: _item.service_request,
-                           location: _item.location_1.latitude + _item.location_1.longitude,
+                           location: _item.location_1.latitude + ' ' + _item.location_1.longitude,
                            neighbourhood: _item.neighbourhood)
 
   number_of_pokemons = rand(1..10)
@@ -43,11 +43,6 @@ requestBody.each do |_item|
     Pokemonwave.create(request: request,
                        pokemon: randomPokemon.pokemon)
   end
-  # number_of_pokemons.times do
-  #   request.pokemonwave = Pokemonnest.order('RANDOM()').first
-  #                     .pokemons.create(name: nest.pokemon.name,
-  #                                      move: nest.pokemon.move)
-  # end
 end
 
 puts "Created #{Pokemonnest.count} pokemonnests."

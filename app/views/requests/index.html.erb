@@ -1,2 +1,9 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<% if @requests.empty?%>
+  <p>There are no requests available.</p>
+<%else%>
+  <%@requests.each do |request|%>
+    <h2><%= request.serviceRequest %></h2>
+    <h4>Department :<%= request.serviceArea%></h4>
+    <h4><%= request.date %></h4>
+  <% end %>
+<%end%>
