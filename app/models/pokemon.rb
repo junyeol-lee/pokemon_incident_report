@@ -5,4 +5,6 @@ class Pokemon < ApplicationRecord
 
   has_many :pokemonwaveds
   has_many :requests, through: :pokemonwaves
+
+  validates :name, :move, presence: true
 end

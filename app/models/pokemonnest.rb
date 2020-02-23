@@ -2,4 +2,6 @@
 
 class Pokemonnest < ApplicationRecord
   has_one :pokemon
+
+  # validates :historicalName, :streetName, :streetNumber, :grade, :locationAddress, :constructionDate, presence: true
 end
