@@ -4,12 +4,35 @@
     <title>PokemonIncidentReport</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+        width:50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+    <header>
+    <h1>311 Pokemon service request system</h1>
+      <p>
+        <%= link_to 'Home', root_path%>
+      </p>
+    </header>
+      <%= yield %>
+  </div>
   </body>
 </html>
