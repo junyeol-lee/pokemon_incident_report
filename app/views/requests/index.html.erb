@@ -2,7 +2,7 @@
   <p>There are no requests available.</p>
 <%else%>
   <%@requests.each do |request|%>
-    <h2><%= request.serviceRequest %></h2>
+    <h2><%= link_to request.serviceRequest, request %></h2>
     <h4>Department :<%= request.serviceArea%></h4>
     <h4><%= request.date %></h4>
   <% end %>

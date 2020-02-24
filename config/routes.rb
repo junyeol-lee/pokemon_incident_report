@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   # GET /requests/:id = >requests#show
 
-  get 'requests/:id', to: 'requests#show', id: /\d+/
+  get 'requests/:id', to: 'requests#show', id: /\d+/, as: 'request'
 end

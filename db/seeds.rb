@@ -8,6 +8,7 @@ Request.destroy_all
 require 'soda/client'
 
 NUMBER_OF_REQUESTS = 10
+Pokemon_complaints = ['Pokemon attack or bite', 'Pokemon entered house', 'Lost Pokemon', 'Pokemon Noise', 'Exploited pokemon', 'Neglecterd Pokemon'].freeze
 
 # API request for 311 service requests
 client = SODA::Client.new(domain: 'data.winnipeg.ca', app_token: 'T8P2t8YpcwEdmk45NmWSyh8ct')
@@ -33,7 +34,7 @@ end
 requestBody.each do |_item|
   request = Request.create(date: _item.sr_date,
                            serviceArea: _item.service_area,
-                           serviceRequest: _item.service_request,
+                           serviceRequest: Pokemon_complaints.sample,
                            latitude: _item.location_1.latitude,
                            longitude: _item.location_1.longitude,
                            neighbourhood: _item.neighbourhood)
