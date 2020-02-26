@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :pages
   # Requests
   # GET / => requests#index
   root to: 'requests#index'
