@@ -24,7 +24,8 @@ historicalPlaceBody.each do |_item|
                             streetName: _item.street_name,
                             streetNumber: _item.street_number,
                             grade: _item.grade,
-                            locationAddress: _item.location,
+                            latitude: _item.location.latitude,
+                            longitude: _item.location.longitude,
                             constructionDate: _item.construction_date)
   pokemonInfo = Faker::Games::Pokemon.unique
   nest.create_pokemon(name: pokemonInfo.name,
