@@ -13,19 +13,16 @@
        * element that contains the map. */
       #map {
         height: 50%;
-        width:50%;
+        width:80%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
+      html, body, .container {
         height: 100%;
-        margin: 0;
-        padding: 0;
       }
     </style>
   </head>
-
-  <body>
   <div class="container">
+    <body>
     <header>
     <h1>311 Pokemon service request system</h1>
       <p>
@@ -33,6 +30,9 @@
       </p>
     </header>
       <%= yield %>
+      <footer>
+        Pokemon coffee right.
+      </footer>
+    </body>
   </div>
-  </body>
 </html>

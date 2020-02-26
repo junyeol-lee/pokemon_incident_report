@@ -7,7 +7,7 @@ Pokemonnest.destroy_all
 Request.destroy_all
 require 'soda/client'
 
-NUMBER_OF_REQUESTS = 10
+NUMBER_OF_REQUESTS = 5
 Pokemon_complaints = ['Pokemon attack or bite', 'Pokemon entered house', 'Lost Pokemon', 'Pokemon Noise', 'Exploited pokemon', 'Neglecterd Pokemon'].freeze
 
 # API request for 311 service requests
@@ -15,7 +15,7 @@ client = SODA::Client.new(domain: 'data.winnipeg.ca', app_token: 'T8P2t8YpcwEdmk
 results = client.get('4her-3th5', :$limit => NUMBER_OF_REQUESTS)
 requestBody = results.body
 # calling historical place API
-results = client.get('ptpx-kgiu', :$limit => 10)
+results = client.get('ptpx-kgiu', :$limit => 5)
 historicalPlaceBody = results.body
 # End of api call
 

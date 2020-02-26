@@ -9,7 +9,7 @@
 <%else%>
   <ul>
     <%@pokemons.each do |pokemon|%>
-    <li><%= pokemon.pokemon.name%></li>
+    <li><%= link_to pokemon.pokemon.name%></li>
     <% end %>
   </ul>
 <%end%>
