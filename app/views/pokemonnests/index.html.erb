@@ -1,2 +1,7 @@
-<h1>Pokemonnests#index</h1>
-<p>Find me in app/views/pokemonnests/index.html.erb</p>
+<%if @nests.empty?%>
+  <p>There are no monsters for the request.</p>
+<%else%>
+    <%@nests.each do |nest|%>
+    <h3><%=link_to nest.historicalName, nest%></h3>
+    <% end %>
+<%end%>

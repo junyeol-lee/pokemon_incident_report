@@ -1,2 +1,3 @@
-<h1>Pokemons#show</h1>
-<p>Find me in app/views/pokemons/show.html.erb</p>
+<h2>Name : <%=@pokemon.name%></h2>
+<h4>Skill: <%=@pokemon.move%></h4>
+<h5>Belongs to :<%=link_to @nest.historicalName, @nest%></h5>

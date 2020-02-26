@@ -1,12 +1,18 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'pokemons/index'
-  get 'pokemons/show'
+  # Requests
   # GET / => requests#index
   root to: 'requests#index'
-  get 'requests', to: 'requests#index'
-  # GET /requests/:id = >requests#show
+  # get 'requests', to: 'requests#index'
+  # # GET /requests/:id = >requests#show
+  # get 'requests/:id', to: 'requests#show', id: /\d+/, as: 'request'
+  resources 'requests', only: %i[index show]
 
-  get 'requests/:id', to: 'requests#show', id: /\d+/, as: 'request'
+  # Pokemons
+  # Get all pokemons
+  resources 'pokemons', only: %i[index show]
+
+  # Pokemonnest
+  resources 'pokemonnests', only: %i[index show]
 end
