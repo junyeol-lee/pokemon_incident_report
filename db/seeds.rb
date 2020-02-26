@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # Run this script using: rails db:seed
+Page.destroy_all
 Pokemonwave.destroy_all
 Pokemon.destroy_all
 Pokemonnest.destroy_all
@@ -47,7 +48,7 @@ requestBody.each do |_item|
                        pokemon: randomPokemon.pokemon)
   end
 end
-
+Page.create(title: 'About 311', content: '311 Pokemon Service request system.', permalink: 'about_us')
 puts "Created #{Pokemonnest.count} pokemonnests."
 puts "Created #{Request.count} requests."
 puts "Created #{Pokemon.count} kinds pokemons."

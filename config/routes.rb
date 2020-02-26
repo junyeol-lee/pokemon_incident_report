@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :pages
   # Requests
   # GET / => requests#index
   root to: 'requests#index'
@@ -16,4 +15,9 @@ Rails.application.routes.draw do
 
   # Pokemonnest
   resources 'pokemonnests', only: %i[index show]
+
+  # Generate all 7 RESTful routes:
+  resources :pages
+
+  get ':permalink', to: 'pages#permalink', as: 'permalink'
 end
