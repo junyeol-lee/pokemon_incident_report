@@ -2,7 +2,7 @@
 
 class RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests = Request.all.page(params[:page]).per(10)
   end
   # Rails automatically loads the associated view:
   # app/views/request/index.html.erb

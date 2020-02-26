@@ -1,3 +1,13 @@
 header{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
+/* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+#map{
+height: 50%;
+width:50%;
+}
+html, body,.section, .container {
+height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */

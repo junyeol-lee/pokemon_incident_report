@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_040956) do
+ActiveRecord::Schema.define(version: 2020_02_26_183645) do
 
   create_table "pages", force: :cascade do |t|
     t.string "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_040956) do
     t.integer "pokemonnest_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "imageLink"
     t.index ["pokemonnest_id"], name: "index_pokemons_on_pokemonnest_id"
   end
 

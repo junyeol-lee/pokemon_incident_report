@@ -2,7 +2,13 @@
 <%if @nests.empty?%>
   <p>There are no monsters for the request.</p>
 <%else%>
-    <%@nests.each do |nest|%>
-    <h3><%=link_to nest.historicalName, nest%></h3>
-    <% end %>
+    <div class="columns">
+        <%@nests.each do |nest|%>
+          <div class="column">
+            <div class="box">
+              <h3><%=link_to nest.historicalName, nest%></h3>
+            </div>
+        </div>
+        <% end %>
+      </div>
 <%end%>

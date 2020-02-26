@@ -11,29 +11,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 50%;
-        width:80%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body{
-        height: 100%;
-      }
+
+
     </style>
   </head>
     <body>
       <section class="section">
-        <div clas="container">
+        <div class="container">
           <header>
           <h1 class="title is-1">311 Pokemon service request system</h1>
-            <p>
-              <%= link_to 'Home', root_path%>
-              <%= link_to 'Pokemons', pokemons_path%>
-              <%= link_to 'Pokemon nests', pokemonnests_path%>
-              <%= link_to 'About Us', permalink_path('about_us')%>
-            </p>
+            <div class="buttons">
+              <button class="button is-dark" $button-text-color:$white><%= link_to 'Home', root_path%></button>
+              <button class="button is-dark"><%= link_to 'Pokemons', pokemons_path%></button>
+              <button class="button is-dark"><%= link_to 'Pokemon nests', pokemonnests_path%></button>
+              <button class="button is-dark"><%= link_to 'About Us', permalink_path('about_us')%></button>
+            </div>
           </header>
           <%= yield %>
           <footer>

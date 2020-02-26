@@ -4,7 +4,7 @@
 <h4>streetNumber: <%= @nest.streetNumber%></h4>
 <h4>grade: <%= @nest.grade%></h4>
 <h4>constructionDate: <%= @nest.constructionDate%></h4>
-<h4>Host pokemon: <%= @nest.pokemon.name%></h4>
+<h4>Host pokemon: <%= link_to @nest.pokemon.name,  @nest.pokemon%></h4>
 
   <div id="map"></div>
   <script>

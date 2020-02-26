@@ -2,7 +2,14 @@
 <% if @pokemons.empty?%>
   <p>There are no requests available.</p>
 <%else%>
-  <%@pokemons.each do |pokemon|%>
-    <h2><%= link_to pokemon.name, pokemon %></h2>
-  <% end %>
+  <div class="columns">
+    <%@pokemons.each do |pokemon|%>
+    <div class="column">
+      <div class="box">
+        <h2><%= link_to pokemon.name, pokemon %></h2>
+        <img src=<%=pokemon.imageLink%> style="width:60px;height:60px;">
+      </div>
+    </div>
+    <% end %>
+  </div>
 <%end%>

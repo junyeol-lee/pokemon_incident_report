@@ -2,9 +2,15 @@
 <% if @requests.empty?%>
   <p>There are no requests available.</p>
 <%else%>
+<p><%=paginate @requests%></p>
   <%@requests.each do |request|%>
-    <h2><%= link_to request.serviceRequest, request %></h2>
-    <h4>Department :<%= request.serviceArea%></h4>
-    <h4><%= request.date %></h4>
+    <div class = "box">
+      <button class="button is-light"><%= link_to request.serviceRequest, request %></button>
+      <div class="content">
+        <h4>Department :<%= request.serviceArea%></h4>
+        <h4><%= request.date %></h4>
+      </div>
+    </div>
   <% end %>
+<p><%=paginate @requests%></p>
 <%end%>

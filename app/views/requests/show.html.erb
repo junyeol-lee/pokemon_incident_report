@@ -7,11 +7,16 @@
 <%if @pokemons.empty?%>
   <p>There are no monsters for the request.</p>
 <%else%>
-  <ul>
-    <%@pokemons.each do |pokemon|%>
-    <li><%=link_to pokemon.pokemon.name, pokemon.pokemon%></li>
-    <% end %>
-  </ul>
+  <div class ="columns">
+      <%@pokemons.each do |pokemon|%>
+      <div class="column">
+        <div class="box">
+          <p><%=link_to pokemon.pokemon.name, pokemon.pokemon%></p>
+          <img src=<%=pokemon.pokemon.imageLink%> style="width:60px;height:60px;">
+        </div>
+      </div>
+      <% end %>
+  </div>
 <%end%>
 
   <div id="map"></div>
